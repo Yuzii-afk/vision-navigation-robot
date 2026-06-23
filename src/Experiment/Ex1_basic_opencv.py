@@ -48,7 +48,7 @@ def show_im(imN):
     plt.show()
 
 # 读取图片
-Image_Dir = Path(__file__).resolve().parent / 'images'
+Image_Dir = Path(__file__).resolve().parent.parent / 'images'
 def readim(photo):
     photo_path = Path(photo)
 
