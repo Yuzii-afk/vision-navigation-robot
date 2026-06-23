@@ -1,13 +1,11 @@
-# This is a sample Python script.
-import cv2
-from pathlib import Path
-import matplotlib.pyplot as plt
-# Press ⌃F5 to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# 引用所需数据库
+import cv2 #OpenCV库
+from pathlib import Path #路径检查
+import matplotlib.pyplot as plt #展示图片所需
 
+# 检查OpenCV版本
 def opencv():
-    # Use a breakpoint in the code line below to debug your script.
-    print(cv2.__version__) # Press F9 to toggle the breakpoint.
+    print(cv2.__version__)
 
 # def show_im(imN): #cv2.imshow()适用于windows
 #     if imN is None:
@@ -36,6 +34,7 @@ def opencv():
 #     for _ in range(5):
 #         cv2.waitKey(1)
 
+# 展示图片
 def show_im(imN):
     if imN is None:
         print("Image not found or cannot be opened.")
@@ -48,15 +47,20 @@ def show_im(imN):
     plt.axis('off')
     plt.show()
 
-
+# 读取图片
+Image_Dir = Path(__file__).resolve().parent / 'images'
 def readim(photo):
-    if not Path(photo).is_file():
+    photo_path = Path(photo)
+
+    if not photo_path.is_file():
+        photo_path = Image_Dir / photo
+    if not photo_path.is_file():
         return None
 
-    im = cv2.imread(photo)
+    im = cv2.imread(str(photo_path))
     return im
 
-
+# 图片信息
 def info(im):
 
     if(im is None):
@@ -75,10 +79,12 @@ def info(im):
     imG = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
     show_im(imG)
 
+# 图片裁切
 def crop_im(im, x1, y1, x2, y2):
     imC=im[y1:y2, x1:x2]
     return imC
 
+# 裁切
 def CropIm(imN):
     # while True:
     if imN is None:
@@ -95,6 +101,7 @@ def CropIm(imN):
     imcrop=crop_im(imN, x1, y1, x2, y2)
     show_im(imcrop)
 
+# 菜单
 def manu(photo):
     im = readim(photo)
     names=["Show im","Info","Crop Im"]
@@ -117,10 +124,10 @@ def manu(photo):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     #opencv()
-    mode=input("Chose your photo (x to exit):")
+    mode=input("Choose your photo (x to exit):")
     while mode != 'x':
         manu(mode)
-        mode = input("Chose your photo (x to exit):")
+        mode = input("Choose your photo (x to exit):")
     #os.system('clear')
     # print("Welcome to Image Info")
     # while True:
