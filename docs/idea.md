@@ -29,5 +29,3 @@ Build a Raspberry Pi based autonomous robot using computer vision and real-time 
 - Battery pack.
 
 ---
-
-## Research Notes
