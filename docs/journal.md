@@ -15,7 +15,7 @@ set up a new development environment for the project.
 - Repository histories diverged.
 ### Solution
 - Resolved by generating a new SSH key and adding it to the GitHub account.
-- Used `git pull --rebase` to synchronize the local repository with the remote repository.
+- Used `git pull --rebase` to synchronise the local repository with the remote repository.
 ### Reflections
 Today I learned the basics of Git and GitHub. Although the setup process took time, it will make future development easier.
 ### Next steps
