@@ -17,14 +17,19 @@ A Raspberry Pi 5 based autonomous robot using computer vision.
 - PID control
 - Autonomous navigation
 
+## Links
+- [Development Journal](docs/journal.md)
+- [Project Ideas](docs/idea.md)
+- [Research Notes](docs/Research.md)
+
 ---
 
 ## Project Structure
-### docs (docs/)
+### [docs](docs/)
 documents involved journal, research notes, and ideas.
-### images (images/)
+### [images](images/)
 images used in the project.
-### src (src/)
+### [src](src/)
 source code for the project.
 
 ---
