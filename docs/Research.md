@@ -1,4 +1,17 @@
 # General knowledge and research
+
+---
+
+### General useful Python Functions and utilities.
+#### numpy
+- `name.astype(np."datatype")` is converting the data type of `name`.
+  - example: `mask.astype(np.uint8)` make `mask` become a 8 bits unsigned integer (0-255).
+  - `np.uint8` unsigned integer 8 bits.
+  - `np.float32` 32 bits floating point.
+  - `np.int32` 32 bits signed integer.
+  - `np.bool_` boolean type.
+
+---
 ### RGB colour selection
 - Colour selection algorithms:
   - RGB represents the intensity of red, green, and blue channels in an image.

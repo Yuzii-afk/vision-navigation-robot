@@ -42,7 +42,10 @@ def colour_red(img):
     R = img[:, :, 2]
 
     # 选择红色 - absolute red
-    mask = (R >150) & (G < 150) & (B < 150)
+    # mask = (R > 150) & (G < 100) & (B < 100)
+
+    # 选择红色 - relative red
+    mask = (R > 80) & (R > G * 1.3) & (R > B * 1.3)
 
     mask = mask.astype(np.uint8)
     mask = mask * 255
