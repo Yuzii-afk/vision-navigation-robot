@@ -24,4 +24,18 @@ Today I learned the basics of Git and GitHub. Although the setup process took ti
 
 ---
 
-## date
+## 2026-6-24
+### Objective
+Implement a basic colour selection algorithm using RGB colour space.
+### Tasks completed
+- Researched algorithms for colour selection in RGB space.
+- Implemented red colour selection thresholding using OpenCV.
+- Showing the selected red areas in the image.
+### Problems encountered
+- Do not know how to apply the mask to the original image.
+- The algorithm was not accurately selecting red areas in some images.
+- The result was not consistent across different lighting conditions.
+### Research Notes
+See in `docs/Research.md` for details on RGB colour selection and OpenCV functions.
+### Solution
+- Used `cv2.bitwise_and()` to apply the mask to the original image.
