@@ -41,4 +41,5 @@ See in `docs/Research.md` for details on RGB colour selection and OpenCV functio
 ### Reflections
 Today I learned how to implement a basic colour selection algorithm using OpenCV. I also learned how to apply a mask to an image.
 ### Next steps
-- Implement colour tracking in a video stream.
+- Imporve the colour selection algorithm.
+- Implement how to draw on the image.
