@@ -33,9 +33,12 @@ Implement a basic colour selection algorithm using RGB colour space.
 - Showing the selected red areas in the image.
 ### Problems encountered
 - Do not know how to apply the mask to the original image.
-- The algorithm was not accurately selecting red areas in some images.
-- The result was not consistent across different lighting conditions.
 ### Research Notes
 See in `docs/Research.md` for details on RGB colour selection and OpenCV functions.
 ### Solution
 - Used `cv2.bitwise_and()` to apply the mask to the original image.
+- Apply `mask.astype(np.uint8) * 255` to convert `[True, False, False]` into `1 or 0` which is `white or black`.
+### Reflections
+Today I learned how to implement a basic colour selection algorithm using OpenCV. I also learned how to apply a mask to an image.
+### Next steps
+- Implement colour tracking in a video stream.
