@@ -63,12 +63,13 @@ def colour_red(img):
     mask2 = cv2.inRange(hsv_img, lower_red2, upper_red2)
     # Add two ranges
     mask = mask1 + mask2
+
     # Map to original image
-    img = cv2.bitwise_and(img, img, mask=mask)
+    # img = cv2.bitwise_and(img, img, mask=mask)
 
     return img, mask
 
-def find_contours(img, mask):
+def find_largest_red(img, mask):
     # 生成轮廓
     # 在mask二值图上做计算，img上面画图
 
@@ -101,5 +102,5 @@ if __name__ == '__main__':
     img = read_img(img_pathing)
     if not img is None:
         red_img, mask = colour_red(img)
-        find_contours(red_img, mask)
+        find_largest_red(red_img, mask)
         show_img(red_img)
