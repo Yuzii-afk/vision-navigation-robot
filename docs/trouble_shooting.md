@@ -16,3 +16,6 @@
 - Implement RGB selection algorithm to detect red objects.
   - `Failed` The algorithm **misses** some red objects.
   - `Solution` Implement relative RGB values `R > 80, R > G * 1.3, R > B * 1.3` to detect red objects.
+- Draw the red object.
+  - `Failed` The datatype of image is wrong, where it needs to be black and white.
+  - `Solution` Create contours on mask image and draw on the img image.

@@ -14,7 +14,7 @@ Current experiments:
 
 - `Ex1_basic_opencv.py`: read, display, inspect, and crop images.
 - `Ex2_red_object_recognise.py`: test camera input and HSV thresholding.
-- `Ex3_Red_Selection.py`: detect red areas from an image using RGB channel selection.
+- `Ex3_Red_Selection.py`: detect red areas from an image using HSV channel selection.
 
 ## Current Vision Direction
 
@@ -47,6 +47,22 @@ This means a pixel is selected when:
 - The red channel is clearly stronger than the blue channel.
 
 This method is easier to understand at the current learning stage than HSV thresholding.
+
+### HSV Red Selection
+
+The next red detection method uses HSV colour space. This allow me to select a wider range of red colours and is more robust.
+
+```python
+colour_min = np.array([0, 100, 100])  # Lower bound of the colour in HSV
+colour_max = np.array([10, 255, 255])  # Upper bound of the colour in HSV
+mask = cv2.inRange(hsv_image, colour_min, colour_max)
+```
+
+This method completely replaces the relative RGB method, but it is more complex than RGB.
+
+- It requires converting the image from RGB to HSV.
+- It requires understanding the HSV colour space.
+- It does not bothered by lighting changes as much as RGB selection.
 
 ## Next Vision Step
 
