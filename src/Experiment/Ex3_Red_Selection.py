@@ -88,11 +88,12 @@ def find_largest_red(img, mask):
         else:
             x, y, w, h = cv2.boundingRect(largest_contour)
 
-            cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 6)
             # cv2.rectangle 画矩阵(img 图片，(x,y)左上角坐标,(x+w,y+h)右下角坐标,2 线条粗细)
             cx = x + w / 2
             cy = y + h / 2
-            cv2.circle(img, (int(cx), int(cy)), 5, (0, 0, 255), -1)
+            # 中心点
+            cv2.circle(img, (int(cx), int(cy)), 5, (255, 255, 255), -1)
 
 
 
