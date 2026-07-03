@@ -19,3 +19,6 @@
 - Draw the red object.
   - `Failed` The datatype of image is wrong, where it needs to be black and white.
   - `Solution` Create contours on mask image and draw on the img image.
+- Video stream colouring
+  - `Failed` Updating the windows in MacOS.
+  - `Solution` Use `cv2.waitKey(1)` not `(0)`.

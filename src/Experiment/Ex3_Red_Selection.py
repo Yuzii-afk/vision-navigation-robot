@@ -97,11 +97,29 @@ def find_largest_red(img, mask):
 
 
 
-if __name__ == '__main__':
-    img_name = input("photo:")
-    img_pathing = path_img(img_name)
-    img = read_img(img_pathing)
-    if not img is None:
-        red_img, mask = colour_red(img)
-        find_largest_red(red_img, mask)
-        show_img(red_img)
+# if __name__ == '__main__':
+#     img_name = input("photo:")
+#     img_pathing = path_img(img_name)
+#     img = read_img(img_pathing)
+#     if not img is None:
+#         red_img, mask = colour_red(img)
+#         find_largest_red(red_img, mask)
+#         show_img(red_img)
+if __name__ == "__main__":
+    # 获取视频流 Get video stream
+    cap = cv2.VideoCapture(0)
+
+    if not cap.isOpened():
+        print("not such file or directory")
+        exit()
+
+    while True:
+        ret, img = cap.read()
+        if not ret:
+            print("not readable")
+            break
+        img,mask = colour_red(img)
+        find_largest_red(img, mask)
+        cv2.imshow("img", img)
+        cv2.waitKey(1)
+

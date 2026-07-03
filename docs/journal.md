@@ -78,3 +78,25 @@ CN: 今天学会了如何找到选中区域的外轮廓，说实话这是我目�
 ### Next steps
 - Drawing rectangle using vedio stream.
 - Find the distance between centre of object and centre of screen/image/frame.
+
+--- 
+
+## 2026-7-3
+### Objective
+- Implement Video tracking using openCV on MacOS.
+- Strengthen colour selection algorithm.
+### Task completed
+- Threshold of video stream colour tracking.
+### Task Unsolved
+- Unprcise colour tracking.
+### Problem encountered
+- `cv2.waitKey(0)` Not updating video stream.
+### Solution
+- Using `cv2.waitKey(1)` to update window.
+### Refecltion
+Today I have learnt the thresholding of the video colour tracking.
+
+CN: 今天学会了基础的视频流获取画面再进行颜色追踪。
+### Next steps
+- Acquire the point location of the object.
+- Improve colour selection algorithm.
