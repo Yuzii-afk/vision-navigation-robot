@@ -100,3 +100,25 @@ CN: 今天学会了基础的视频流获取画面再进行颜色追踪。
 ### Next steps
 - Acquire the point location of the object.
 - Improve colour selection algorithm.
+
+---
+
+## 2026-7-4 to 12
+### Objective
+- Buy hardware required.
+  - Including:
+    - Car chassis
+    - Motor & wheels x 4
+    - multimeter
+    - Batteries
+    - Charger
+- Construct the chassis.
+- Test the motor.
+### Task completed
+- Construct the chassis and motor.
+- Test the motor and let it work.
+### Problem encountered
+- How to connect each different elements.
+### Solution
+- Search online and follow supplier instruction
+### Next steps
