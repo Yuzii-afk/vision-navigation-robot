@@ -103,7 +103,22 @@ CN: 今天学会了基础的视频流获取画面再进行颜色追踪。
 
 ---
 
-## 2026-7-6
+## 2026-7-4 to 12
 ### Objective
-- Improve clour selection algorithm.
-- Calulate disparity between object and centre.
+- Buy hardware required.
+  - Including:
+    - Car chassis
+    - Motor & wheels x 4
+    - multimeter
+    - Batteries
+    - Charger
+- Construct the chassis.
+- Test the motor.
+### Task completed
+- Construct the chassis and motor.
+- Test the motor and let it work.
+### Problem encountered
+- How to connect each different elements.
+### Solution
+- Search online and follow supplier instruction
+### Next steps
