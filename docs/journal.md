@@ -100,3 +100,10 @@ CN: 今天学会了基础的视频流获取画面再进行颜色追踪。
 ### Next steps
 - Acquire the point location of the object.
 - Improve colour selection algorithm.
+
+---
+
+## 2026-7-6
+### Objective
+- Improve clour selection algorithm.
+- Calulate disparity between object and centre.
