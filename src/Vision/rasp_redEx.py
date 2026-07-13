@@ -4,11 +4,14 @@ from picamera2 import Picamera2
 last_centre=None
 picam2 = Picamera2()
 
-picam2.configure({
-    "resolution": (640, 480),
-    "ExposureTime": 30000,
-    "AwbEnable": False
-})
+config = picam2.create_preview_configuration(
+    main={"size": (4608, 2592)},
+    controls={
+        "ExposureTime": 30000,
+        "AwbEnable": False
+    }
+)
+picam2.configure(config)
 
 picam2.start()
 import time
