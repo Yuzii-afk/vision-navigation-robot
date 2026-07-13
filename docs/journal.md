@@ -122,3 +122,29 @@ CN: 今天学会了基础的视频流获取画面再进行颜色追踪。
 ### Solution
 - Search online and follow supplier instruction
 ### Next steps
+Get coordinates of the object ready to calculate "central disparity".
+
+---
+
+## 2026-7-13
+### Objective
+- Improve colour selection to overcome different light surrounding.
+- Acquire coordinates of object during the video and print it.
+### Task completed 
+[Red coordinates](src/Vision/red_coor.py)
+#### Include
+- Optimise photo resize technic.
+  - `ROI`
+  - `Resize frame`
+- Preprocessing each frame.
+- Dynamic HSV value.
+- Locating object.
+- Morphology
+### Problem encountered
+- Previous HSV which is constant does not work perfectly under different surrounding.
+- Raspberry pi 5 work only 5 frames per second with unoptimised algorithm.
+### Solution
+- Apply dynamic `v value`.
+- Implement `ROI` and `cv2.resize` to optimise the algorithm.
+### Next steps
+- Hardware control & associate camera with wheels.
