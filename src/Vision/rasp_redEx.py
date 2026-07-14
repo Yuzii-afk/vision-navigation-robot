@@ -5,9 +5,9 @@ last_centre=None
 picam2 = Picamera2()
 
 config = picam2.create_preview_configuration(
-    main={"size": (4608, 2592)},
+    main={"size": (1536, 864)},
     controls={
-        "ExposureTime": 30000,
+        "ExposureTime": 20000,
         "AwbEnable": False
     }
 )
