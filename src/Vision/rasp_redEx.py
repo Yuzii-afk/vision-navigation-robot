@@ -14,8 +14,13 @@ config = picam2.create_preview_configuration(
 picam2.configure(config)
 
 picam2.start()
+
 import time
 time.sleep(0.5)
+
+fps_counter = 0
+fps_timer = time.time()
+
 while True:
     frame_rgb = picam2.capture_array()
     frame = cv2.cvtColor(frame_rgb, cv2.COLOR_RGB2BGR)
@@ -30,14 +35,14 @@ while True:
         else:
             last_centre = None
 
-    if last_centre is not None:
-        # cx, cy = last_centre
-        # cv2.circle(frame, (int(cx), int(cy)), 5, (255, 255, 255), -1)
-        # cv2.imshow("img", frame)
-        # cv2.waitKey(1)
-        print(f"FPS: {1 / (time.time() - start):.1f}")
-        print("last centre found:" , last_centre)
+    fps_counter += 1
+    if time.time() - fps_timer >= 1.0:
+        print(f"FPS: {fps_counter}")
+        fps_counter = 0
+        fps_timer = time.time()
 
+    if last_centre is not None:
+        print("last centre found:", last_centre)
     # if cv2.waitKey(1) & 0xFF == ord('q'):
     #     break
 #
