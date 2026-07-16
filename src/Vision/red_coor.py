@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-import time
+# import time
 
 # Dynamic v value
 def get_adaptive_v_range(frame):
@@ -154,32 +154,32 @@ def local_search(frame , coordinates):
     return centre
 
 
-last_centre=None
-cap = cv2.VideoCapture(0)
-
-while True:
-    ret, frame = cap.read()
-    if not ret:
-        print("not readable")
-        break
-
-    start = time.time()
-    if last_centre is None:
-        last_centre = global_search(frame)
-    else:
-        new_centre = local_search(frame, last_centre)
-        if new_centre is not None:
-            last_centre = new_centre
-        else:
-            last_centre = None
-
-    if last_centre is not None:
-        # cx, cy = last_centre
-        # cv2.circle(frame, (int(cx), int(cy)), 5, (255, 255, 255), -1)
-        # cv2.imshow("img", frame)
-        # cv2.waitKey(1)
-        print(f"FPS: {1 / (time.time() - start):.1f}")
-        print("last centre found:" , last_centre)
+# last_centre=None
+# cap = cv2.VideoCapture(0)
+#
+# while True:
+#     ret, frame = cap.read()
+#     if not ret:
+#         print("not readable")
+#         break
+#
+#     start = time.time()
+#     if last_centre is None:
+#         last_centre = global_search(frame)
+#     else:
+#         new_centre = local_search(frame, last_centre)
+#         if new_centre is not None:
+#             last_centre = new_centre
+#         else:
+#             last_centre = None
+#
+#     if last_centre is not None:
+#         # cx, cy = last_centre
+#         # cv2.circle(frame, (int(cx), int(cy)), 5, (255, 255, 255), -1)
+#         # cv2.imshow("img", frame)
+#         # cv2.waitKey(1)
+#         print(f"FPS: {1 / (time.time() - start):.1f}")
+#         print("last centre found:" , last_centre)
 
     # if cv2.waitKey(1) & 0xFF == ord('q'):
     #     break

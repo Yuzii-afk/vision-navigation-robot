@@ -130,8 +130,8 @@ Get coordinates of the object ready to calculate "central disparity".
 ### Objective
 - Improve colour selection to overcome different light surrounding.
 - Acquire coordinates of object during the video and print it.
-### Task completed 
-[Red coordinates](src/Vision/red_coor.py)
+### Task completed
+`red_coor.py`
 #### Include
 - Optimise photo resize technic.
   - `ROI`
@@ -148,3 +148,15 @@ Get coordinates of the object ready to calculate "central disparity".
 - Implement `ROI` and `cv2.resize` to optimise the algorithm.
 ### Next steps
 - Hardware control & associate camera with wheels.
+
+---
+
+## 2026-7-16
+### Objective
+- Calculate percentage error of red object from the central line.
+- Read the area of object to calculate the distance.
+- Ready for hardware investigation.
+### Task completed
+- New function in `disp_and_area.py`.
+  - Percentage different of object.
+  - Area of the object.
