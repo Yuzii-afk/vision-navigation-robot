@@ -160,3 +160,19 @@ Get coordinates of the object ready to calculate "central disparity".
 - New function in `disp_and_area.py`.
   - Percentage different of object.
   - Area of the object.
+### Problem encountered
+- Complicate the algorithm by name the side and calculate seperatly.
+### Solution
+- Using signed number to label right or left.
+### Next steps
+Control hardware using python code.
+
+---
+
+## 2026-7-17
+### Objective
+- Thresholding of hardware control
+### Task completed
+- Connect each different port to raspberry.
+- Simple code control the motor.
+### Problem encountered
