@@ -2,7 +2,10 @@ from Vision.red_coor import *
 from Vision.disp_and_area import *
 from Hardware.motor import *
 import config as cfg
+
 from picamera2 import Picamera2
+import cv2
+import RPi.GPIO as GPIO
 
 last_centre=None
 picam2 = Picamera2()
@@ -27,6 +30,7 @@ motor_right = motor(cfg.PWMA_RIGHT, cfg.AIN1_RIGHT, cfg.AIN2_RIGHT)
 speed_left = cfg.BASE_SPEED
 speed_right = cfg.BASE_SPEED
 speed_difference = 10
+direction = 0
 while True:
     frame_rgb = picam2.capture_array()
     frame = cv2.cvtColor(frame_rgb, cv2.COLOR_RGB2BGR)
@@ -40,16 +44,17 @@ while True:
         else:
             last_centre = None
 
-    direction = 0
-    if last_centre is None and direction > 0:
+
+    if last_centre is None:
         motor_left.motor_stop()
         motor_right.motor_stop()
         continue
-
+    print("centre found:", last_centre)
     cx, _ = last_centre
     _ , width = frame.shape[:2]
 
     direction = get_disparity(cx , width)
+
     speed_left = speed_left + direction*speed_difference
     speed_right = speed_right - direction*speed_difference
 
