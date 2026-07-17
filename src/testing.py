@@ -53,7 +53,7 @@ while True:
     cx, _ = last_centre
     _ , width = frame.shape[:2]
 
-    direction = get_disparity(cx , width)
+    direction = get_disparity(cx , width) * speed_difference
 
     speed_left = speed_left + direction*speed_difference
     speed_right = speed_right - direction*speed_difference
