@@ -49,7 +49,7 @@ while True:
         motor_left.motor_stop()
         motor_right.motor_stop()
         continue
-    print("centre found:", last_centre)
+
     cx, _ = last_centre
     _ , width = frame.shape[:2]
 
@@ -61,10 +61,7 @@ while True:
     motor_left.motor_spin(speed_left)
     motor_right.motor_spin(speed_right)
 
-    key = cv2.waitKey(1) & 0xFF
-    if key == ord('q'):
-        print("用户按下 q，程序退出")
-        break
+    print("direction:", direction)
 
 motor_left.motor_stop()
 motor_right.motor_stop()
