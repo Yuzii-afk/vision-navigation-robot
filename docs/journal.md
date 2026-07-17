@@ -179,8 +179,11 @@ Control hardware using python code.
 ### Problem encountered
 - Wheels do not spin.
 - Two wheels spin in a different direction.
+- Cannot read `config.py`
 ### Solution
 - Testing voltage of wires.
 - Adapt connection of the wires.
+- add `echo 'export PYTHONPATH="/home/yuzii/vision-navigation-robot/src:$PYTHONPATH"' >> ~/.bashrc
+source ~/.bashrc` to bash
 ### Next steps
 Cooperation between camera and motor.
