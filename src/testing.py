@@ -55,8 +55,8 @@ while True:
 
     direction = get_disparity(cx , width) * speed_difference
 
-    speed_left = speed_left + direction*speed_difference
-    speed_right = speed_right - direction*speed_difference
+    speed_left = speed_left + direction
+    speed_right = speed_right - direction
 
     motor_left.motor_spin(speed_left)
     motor_right.motor_spin(speed_right)
