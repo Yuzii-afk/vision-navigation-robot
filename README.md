@@ -33,5 +33,7 @@ explanation of each python program.
 images used in the project.
 ### [src](src/)
 source code for the project.
+### [config](src/config.py)
+Setting of the whole project.
 
 ---

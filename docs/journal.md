@@ -175,4 +175,12 @@ Control hardware using python code.
 ### Task completed
 - Connect each different port to raspberry.
 - Simple code control the motor.
+- Set up config code.
 ### Problem encountered
+- Wheels do not spin.
+- Two wheels spin in a different direction.
+### Solution
+- Testing voltage of wires.
+- Adapt connection of the wires.
+### Next steps
+Cooperation between camera and motor.

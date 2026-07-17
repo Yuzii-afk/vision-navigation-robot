@@ -1,14 +1,15 @@
 from red_coor import *
+import config
 from picamera2 import Picamera2
 
 last_centre=None
 picam2 = Picamera2()
 
 config = picam2.create_preview_configuration(
-    main={"size": (1536, 864)},
+    main={"size": (config.CAMERA_WIDTH, config.CAMERA_HEIGHT)},
     controls={
-        "ExposureTime": 20000,
-        "AwbEnable": False
+        "ExposureTime": config.EXPOSURE_TIME,
+        "AwbEnable": config.AWB_ENABLE
     }
 )
 picam2.configure(config)

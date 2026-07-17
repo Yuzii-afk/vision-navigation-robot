@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import config as cfg
 # import time
 
 # Dynamic v value
@@ -38,7 +39,7 @@ def find_contour(mask):
     for cnt in contour:
         area = cv2.contourArea(cnt)
 
-        if area < 200:
+        if area < cfg.AREA_THRESHOLD:
             continue
 
         if area > max_area:
@@ -59,7 +60,7 @@ def preprocess(frame):
     # Morphology
 
     # kernel = np.ones((5, 5), np.uint8)
-    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
+    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, cfg.MORPH_KERNEL)
 
     opening = cv2.morphologyEx(ini_mask, cv2.MORPH_OPEN, kernel)
     closing = cv2.morphologyEx(opening, cv2.MORPH_CLOSE, kernel)
@@ -96,7 +97,7 @@ def get_coordinates(frame):
 
 def global_search(frame):
     # Get resized img
-    resize_scale = 4
+    resize_scale = cfg.RESIZE_SCALE
     # Get height and width 获取图片长宽
     y , x = frame.shape[:2]
     # Calculate New image 计算新图像大小
@@ -140,7 +141,7 @@ def crop_roi(frame, centre, roi_size):
     return roi, x1, y1
 
 def local_search(frame , coordinates):
-    roi , x1, y1 = crop_roi(frame, coordinates, roi_size=300)
+    roi , x1, y1 = crop_roi(frame, coordinates, roi_size=cfg.ROI_SIZE)
 
     if roi is None:
         return global_search(frame)
