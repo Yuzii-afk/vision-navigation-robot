@@ -60,12 +60,16 @@ try:
         _ , width = frame.shape[:2]
         cal_speed = get_speed(area, max_area, min_area, max_speed)
         direction = get_disparity(cx , width)
-
-        turn = cfg.KP_TURN
-        speed_left, speed_right = side_speed(direction, turn, cal_speed)
+        if direction == 0:
+            speed_left = cal_speed
+            speed_right = cal_speed
+        else:
+            turn = cfg.KP_TURN
+            speed_left, speed_right = side_speed(direction, turn, cal_speed)
 
         motor_left.motor_spin(speed_left)
         motor_right.motor_spin(speed_right)
+
 except KeyboardInterrupt:
     print("Closing")
 finally:
