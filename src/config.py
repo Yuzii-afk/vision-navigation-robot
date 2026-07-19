@@ -19,7 +19,8 @@ PWM_MAX_DUTY = 100     # 占空比最大值
 
 # ---------- 电机控制参数 ----------
 BASE_SPEED = 30        # 基础速度 (0~100)
-KP_TURN = 0.3          # 转向比例系数 (偏差 → 转向量)
+MAX_SPEED = 80
+KP_TURN = 30          # 转向比例系数 (偏差 → 转向量)
 
 # ---------- 摄像头参数 ----------
 CAMERA_WIDTH = 1536
@@ -35,6 +36,8 @@ MORPH_KERNEL = (5, 5)  # 形态学内核大小
 
 # ---------- 目标跟踪参数 ----------
 LOST_THRESHOLD = 5     # 连续丢失多少帧后切回全局搜索
+AREA_NEAR = 15000      # Object Too close
+AREA_FAR = 2000        # Object Too far
 
 # ---------- PID 参数 ----------
 KP = 0.4

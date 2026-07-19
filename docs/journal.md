@@ -187,3 +187,18 @@ Control hardware using python code.
 source ~/.bashrc` to bash
 ### Next steps
 Cooperation between camera and motor.
+
+---
+
+## 2026-7-19
+### Objective
+- Implement steering code to the car.
+- Implement motion code to the car.
+### Task completed
+- Wrote `steering.py` to implement threshold of direction control.
+- Wrote `motion.py` to control when to stop the car.
+### Problem encountered
+- Speed of two side motor is simply adding to previous.
+  Resulting in the car cannot change direction.
+### Solution
+- Recalculate each side in each cycle base on defult speed.
