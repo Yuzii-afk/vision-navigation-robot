@@ -202,3 +202,43 @@ Cooperation between camera and motor.
   Resulting in the car cannot change direction.
 ### Solution
 - Recalculate each side in each cycle base on defult speed.
+
+--- 
+
+## 2026-8-3
+
+### Objective
+- Complete hardware installation and wiring design of the car.
+- Debug the car to achieve basic tracking of red objects.
+
+### Tasks completed
+- Over the past ten days, completed multiple rounds of design and adjustment of car assembly, wiring, and component layout.
+- Verified power supply system, motor driver, and camera module; confirmed basic hardware is working properly.
+- Successfully got the car running today; it can move and track red objects to a certain extent.
+- Integrated visual tracking with motor control; the car can now follow a red object based on its position in the frame.
+
+### Problem encountered
+- Tracking response is sluggish; the car sometimes runs and sometimes stops, with no consistent behavior.
+- The target is easily lost, especially when the car turns or the lighting changes.
+- The car occasionally fails to start moving even when a red object is detected.
+- `KeyboardInterrupt` cannot be detected when running via SSH (no GUI environment).
+
+### Solution
+- Need to further tune PID parameters (especially `KP_TURN`) to improve responsiveness and smoothness.
+- Optimize HSV thresholds and morphological filtering parameters to enhance color recognition stability under varying lighting.
+- Consider adding a speed closed-loop control (using encoder feedback) to make movement smoother.
+- For SSH exit: use `try/except KeyboardInterrupt` + `finally` cleanup instead of `cv2.waitKey()`.
+
+### Reflections
+After more than ten days of hardware debugging, the car finally runs today! Although there are still many issues, it feels great to see it move. I realised that hardware debugging requires much more patience than software debugging — a loose wire can cause hours of troubleshooting. The current tracking is still unstable, but the foundation is solid.
+
+CN：经过十几天反复设计安装和调试，小车今天终于能跑了！虽然还有很多问题，但看到它动起来的那一刻真的很激动。硬件调试比软件调试需要更多的耐心，一根线没插紧就可能花几个小时排查。目前的跟踪还不够稳定，但基础已经打好了。
+
+### Next steps
+- Replace simple P control with full PID control to improve tracking smoothness.
+- Add anti-loss mechanism to recover target quickly after losing it.
+- Collect experimental data by printing area and disparity values, then fine-tune thresholds.
+- If possible, add encoder feedback to achieve speed closed-loop control and make movement smoother.
+
+### Research Notes
+See `docs/Hardware_Tuning.md` for detailed hardware debugging records and wiring diagrams. Next step: replace simple P control with PID control and add an anti-loss mechanism to improve target tracking continuity.
