@@ -1,4 +1,6 @@
 # Vision Navigation Robot
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -10,17 +12,16 @@ A Raspberry Pi 5 based autonomous robot using computer vision.
 
 - OpenCV setup
 - Red object detection
+- Object tracking
+- Basic navigation and hardware control
 
 ## Future Goals
 
-- Object tracking
 - PID control
 - Autonomous navigation
 
 ## Links
 - [Development Journal](docs/journal.md)
-- [attempts and solutions](docs/trouble_shooting.md)
-- [Project Ideas](docs/idea.md)
 
 ---
 
