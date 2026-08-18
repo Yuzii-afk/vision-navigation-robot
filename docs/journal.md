@@ -243,6 +243,8 @@ CN：经过十几天反复设计安装和调试，小车今天终于能跑了！
 ### Research Notes
 See `docs/Hardware_Tuning.md` for detailed hardware debugging records and wiring diagrams. Next step: replace simple P control with PID control and add an anti-loss mechanism to improve target tracking continuity.
 
+---
+
 ## 2026-8-4 to 2026-8-14
 
 ### Objective
@@ -254,18 +256,36 @@ See `docs/Hardware_Tuning.md` for detailed hardware debugging records and wiring
 - Reviewed the overall project architecture and identified key areas for improvement.
 
 ### Problem encountered
-- The current PID control parameters need tuning to reduce oscillation.
 - Target loss during sharp turns remains a recurring issue.
 
 ### Reflection
-After more than two months of development, the car is now capable of basic red object tracking, but there is still room for improvement. This break gave me a chance to step back and think about the bigger picture. Instead of rushing into new features, the next step is to refine what already exists — especially the PID controller and the anti-loss mechanism.
-
-**CN：** 经过两个多月的持续开发，小车目前已经具备基本的红色物体追踪能力，但仍有提升空间。这次休息让我有机会退一步思考整体方向。下一步不是盲目添加新功能，而是优化现有的PID控制和防丢失机制。
+After more than two months of development, the car is now capable of basic red object tracking, but there is still room for improvement. This break gave me a chance to step back and think about the bigger picture. Instead of rushing into new features, the next step is to refine what already exists.
+**CN：** 经过两个多月的持续开发，小车目前已经具备基本的红色物体追踪能力，但仍有提升空间。这次休息让我有机会退一步思考整体方向。下一步不是盲目添加新功能。
 
 ### Next steps
-- Fine-tune PID parameters (KP, KI, KD) using step response testing.
 - Implement a more robust target re-acquisition strategy.
 - Document the entire system architecture in the README (block diagram + explanation).
 
 ### Research Notes
 - Need to research: PID tuning methods (Ziegler-Nichols / trial-and-error) and how to implement a simple Kalman filter for smoother tracking.
+
+---
+
+## 2026-8-15
+
+### Objective
+- Implrove base speed algorithm.
+
+### Tasks completed
+- Adjusting set value of maximum size accept.
+- Rewrite forward code.
+
+### Problem encountered
+- The car often stop moving as the object is too large.
+- Different size object have different area in the same distance.
+
+### Solution
+- Only detect the object if it is too close.
+
+### Next steps
+- Implement PID control to make the turning smooth.

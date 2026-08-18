@@ -1,3 +1,4 @@
+import config as cfg
 def side_speed(disparity, KP_TURN, Speed):
 
     base_speed = Speed
@@ -11,16 +12,11 @@ def side_speed(disparity, KP_TURN, Speed):
 
     return speed_left, speed_right
 
-def get_speed(area, area_n, area_f, max_speed):
-    area_max = area_n
-    area_min = area_f
+def get_speed(area,max_speed):
+    area_max = cfg.AREA_NEAR
 
     if area >= area_max:
         speed = 0
-    elif area <= area_min:
-        speed = max_speed
     else:
-        ratio = (area - area_min) / (area_max - area_min)
-        speed = max_speed * (1-ratio)
-
+        speed = max_speed
     return speed
