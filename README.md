@@ -1,4 +1,6 @@
 # Vision Navigation Robot
+#### Vision navigation robot - A Raspberry Pi 5 based autonomous robot that tracks a red target in real time using computer vision.
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
