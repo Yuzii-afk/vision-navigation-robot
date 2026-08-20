@@ -18,5 +18,5 @@ def get_speed(area,max_speed):
     if area >= area_max:
         speed = 0
     else:
-        speed = max_speed
+        speed = max_speed * 0.4
     return speed

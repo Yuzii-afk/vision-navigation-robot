@@ -36,7 +36,7 @@ MORPH_KERNEL = (5, 5)  # 形态学内核大小
 
 # ---------- 目标跟踪参数 ----------
 LOST_THRESHOLD = 5     # 连续丢失多少帧后切回全局搜索
-AREA_NEAR = 15000      # Object Too close
+AREA_NEAR = 50000      # Object Too close
 AREA_FAR = 2000        # Object Too far
 
 # ---------- PID 参数 ----------
