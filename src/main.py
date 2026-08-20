@@ -41,9 +41,15 @@ try:
         frame = cv2.cvtColor(frame_rgb, cv2.COLOR_RGB2BGR)
 
         if last_centre is None:
+
+            print("Lost Object")
+
             last_centre = global_search(frame)
         else:
             new_centre = local_search(frame, last_centre)
+
+            print("Centre: ", new_centre)
+
             if new_centre is not None:
                 last_centre = new_centre
             else:

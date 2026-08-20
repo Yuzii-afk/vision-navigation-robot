@@ -1,7 +1,7 @@
+print("Vision Navigation Robot")
 from Vision.red_coor import *
 from Vision.disp_and_area import *
 from Hardware.motor import *
-import config as cfg
 from Control.steering import *
 
 from picamera2 import Picamera2
@@ -32,8 +32,8 @@ max_speed = cfg.MAX_SPEED
 base_speed = cfg.BASE_SPEED
 speed_difference = cfg.KP_TURN
 
-max_area = cfg.AREA_NEAR
-min_area = cfg.AREA_FAR
+# max_area = cfg.AREA_NEAR
+# min_area = cfg.AREA_FAR
 
 try:
     while True:
@@ -58,7 +58,7 @@ try:
         area = get_area(frame, cx, cy)
 
         _ , width = frame.shape[:2]
-        cal_speed = get_speed(area, max_area, min_area, max_speed)
+        cal_speed = get_speed(area,max_speed)
         direction = get_disparity(cx , width)
         if direction == 0:
             speed_left = cal_speed
@@ -72,6 +72,7 @@ try:
 
 except KeyboardInterrupt:
     print("Closing")
+
 finally:
     motor_left.motor_stop()
     motor_right.motor_stop()
