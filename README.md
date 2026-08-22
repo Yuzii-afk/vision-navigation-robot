@@ -27,7 +27,7 @@ A Raspberry Pi 5 based autonomous robot using computer vision.
 
 ---
 
-## Project Structure
+## Project Info
 ### [docs](docs/)
 documents involved journal, research notes, and ideas.
 #### [Programme notes](docs/Program_notes/)
