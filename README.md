@@ -131,6 +131,7 @@ sudo apt install -y python3-pip python3-venv python3-opencv \
 git clone https://github.com/Yuzii-afk/vision-navigation-robot.git
 cd vision-navigation-robot
 pip install -r requirements.txt
+cd src
 python main.py
 ```
 
