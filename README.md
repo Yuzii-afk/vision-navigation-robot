@@ -7,8 +7,7 @@
 ## 📸 Demo
 
 ![Demo](Hardware_Photo/Info/Info.gif)
->[📺 Watch the full demo video](Hardware_Photo/Info/Info.mp4)
-
+> Watch the demo video (https://youtu.be/aLPEfafGhwM?si=glDIG7xexDDY1jnS)
 ---
 
 ## 🎯 What It Does
