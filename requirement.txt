@@ -1,0 +1,10 @@
+# Core Vision & Math Libraries
+opencv-python-headless>=4.8.0   # OpenCV (headless version, no GUI, lightweight for Pi)
+numpy>=1.24.0                   # Numerical computing support
+
+# Raspberry Pi Hardware Control
+picamera2>=0.3.0                # Official camera library for Pi
+RPi.GPIO>=0.7.0                 # GPIO control for motor drivers
+
+# Image Processing Utilities (optional but recommended)
+Pillow>=10.0.0                  # Image format handling and basic processing
