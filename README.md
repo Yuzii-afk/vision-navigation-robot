@@ -2,6 +2,9 @@
 
 > A Raspberry Pi 5 based autonomous robot that tracks a red target in real time using computer vision.
 
+## 📖 Documentation
+
+- **[Development Journal](docs/journal.md)** — A detailed record of my entire development process, including problems faced, solutions tried, and lessons learned.
 ---
 
 ## 📸 Demo
