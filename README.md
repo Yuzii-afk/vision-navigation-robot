@@ -5,6 +5,13 @@
 ## 📖 Documentation
 
 - **[Development Journal](docs/journal.md)** — A detailed record of my entire development process, including problems faced, solutions tried, and lessons learned.
+
+## 📦 Release
+
+**[View v0.9 Release →](https://github.com/Yuzii-afk/vision-navigation-robot/releases/tag/v0.9)**
+
+The release includes a demo video and detailed release notes.
+
 ---
 
 ## 📸 Demo
